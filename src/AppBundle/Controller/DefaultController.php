@@ -53,7 +53,7 @@ class DefaultController extends Controller
     public function listRegisteredUsers() {
         $em = $this->getDoctrine()->getManager();
         
-        $data = $em->createQuery(
+        $users = $em->createQuery(
                 "SELECT u.nome, e.rua "
                 . "FROM AppBundle:Usuario u "
                 . "JOIN AppBundle:Endereco e "
@@ -61,6 +61,6 @@ class DefaultController extends Controller
                 . "WHERE u.id IS NOT NULL")
                 ->getResult();
         
-        return new Response(json_encode($data));
+        return $this->render('listUsers.html.twig', ['users' => $users]);
     }
 }
