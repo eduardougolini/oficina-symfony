@@ -1,7 +1,11 @@
-<a href="{{ path('homepage') }}"><button>Adicionar usuário</button></a>
+{% extends 'base.html.twig' %}
 
-<ul>
-    {% for user in users %}
-        <li>{{ user['nome'] }} - {{ user['rua'] }}</li>
-    {% endfor %}
-</ul>
+{% block body %}
+    <a href="{{ path('homepage') }}"><button>Adicionar usuário</button></a>
+
+    <ul>
+        {% for user in users %}
+            <li>{{ user['nome'] }} - {{ user['rua'] }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
