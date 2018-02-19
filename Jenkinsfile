@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('teste') {
       steps {
-        echo 'passou pelo primeiro est·gio'
+        echo 'passou pelo primeiro est√°gio'
       }
     }
     stage('teste 2') {
       steps {
-        echo 'Passou pelo segundo est·gio'
+        echo 'Passou pelo segundo est√°gio'
       }
     }
   }
